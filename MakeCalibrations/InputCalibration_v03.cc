@@ -8,9 +8,14 @@ int main(int argc, char** argv) {
   cout << "starting    " << endl;
 
   // Sources and detectors calibrated
-  std::vector<string> SourcesCalibrated = {"Cs", "Y1", "Y2", "AmBe", "CmC"};
+  std::vector<int> DetectorsCalibrated = {1,  2,  3,  4,  5,  6,  7,  8,  9,
+                                          10, 11, 12, 13, 14, 15, 16, 17, 18,
+                                          19, 20, 21, 22, 23, 24, 25, 26, 27};
 
-  std::vector<int> DetectorsCalibrated = {1, 2, 3, 4};
+  std::vector<string> SourcesCalibrated = {"Cs", "Y1", "Y2"};
+  // Sources and detectors calibrated
+  // std::vector<string> SourcesCalibrated = {  "Cs",  "Y1",   "Y2"
+  //                                          "Bi1", "Bi2", "AmBe", "CmC"};
 
   // Information MC
 
@@ -29,12 +34,14 @@ int main(int argc, char** argv) {
   // Information outputfolder
   string ArgumentsCondor = "Condor/Inputs/ArgumentsForCondor.txt";
 
-  // Information calibration sources
-  string BackgroundType = "Background_4";
+  // Information calibration sourcesdds
+  string BackgroundType = "27sTED_Background";
   std::vector<string> Source = {"Cs", "Bi1", "Bi2", "AmBe", "Y1",
                                 "Y2", "Co",  "Ba",  "CmC",  "Mn"};
-  std::vector<string> SourceType = {"Cs_4", "Bi_4", "Bi_2", "AmBe_4", "Y_4",
-                                    "Y_4",  "Co_2", "Ba_4", "CmC_4",  "Mn_2"};
+  std::vector<string> SourceType = {
+      "27sTED_Cs_2",  "27sTED_Bi_1", "27sTED_Bi_1", "27sTED_AmBe_1",
+      "27sTED_Y_2",   "27sTED_Y_2",  "Co_2",        "27sTED_Ba_1",
+      "27sTED_CmC_1", "Mn_2"};
   std::vector<string> SourceTypeSimulation = {"Cs", "Bi", "Bi", "AmBe", "Y",
                                               "Y",  "Co", "Ba", "CmC",  "Mn"};
   //  std::vector<double> Percen = {30, 25, 20, 13, 20, 30, 30, 30, 20, 20};
@@ -44,25 +51,24 @@ int main(int argc, char** argv) {
   std::vector<double> GammaEnergy = {0.661657, 0.569698, 1.063656, 4.438,
                                      0.89804,  1.836063, 1.173,    0.356012,
                                      6.130,    0.834848};
-  std::vector<int> Rebin = {2, 2, 2, 8, 2, 4, 4, 1, 16, 4};
-
+  std::vector<int> Rebin = {2, 2, 2, 20, 2, 4, 4, 1, 16, 4};
   bool LaunchFitPoints = true;
   // Parameters for fitting
   int GeneralRebin = 1;
   string NameoutputFile;
-  int npRes = 100;  // Number points resolution
-  npRes = 50;
-  double Res = 0.2;    // Resolution val ue
-  double PERRes = 80;  // Percentage variation resolution. The range tested is
-                       //   [Res-Res*PERRes, Res+Res*PERRes]
-  int npCalib = 200;   // Number of points calibration adf
-  npCalib = 50;
+  int npRes = 10;     // 50      // Number points resolution
+  double Res = 0.25;  // Resolution val ue
+  double PERRes =
+      10;  // 50  // Percentage variation resolution. The range tested is
+           //    [Res-Res*PERRes, Res+Res*PERRes]
+  int npCalib = 50;  // Number of points calibration
   double Calib[(int)DetectorsCalibrated.size()] = {
-      0.00032,
-      0.00032,
-      0.00032,
-      0.00032,
-  };  // Calibration value
+      0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019,
+      0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019,
+      0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019,
+      0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019,
+      0.00019, 0.00019, 0.00019, 0.00019};  // Calibration
+                                            // value
   double PERCalib = 20;  // Percentage variation calibratio. The range tested is
                          // [Calib-Calib*PERCalib, Calib+Calib*PERCalib]
 
