@@ -1,0 +1,36 @@
+File with info
+Fri 22 May 2026 08:24:45 AM CEST
+
+Plot created in:
+/home/victor93/CmExperimentFolder/2026_Sm/2026_Sm/Plots01_Victor
+
+Last Root commands
+plot2D({"Edep"},{"Cs_Low_Det9_16"}, {1,9,10,11,13,14,16},{0.15},{9.999}, {3}, "Counts", {1})
+plot2D({"Edep"},{"Cs_Low_Det9_16"}, {1,9,10,11,13,14,16},{0.15},{9.999}, {3}, "Counts", {1})
+.x Plot2DHisto.cc+
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {1},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {4},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},0,0,0,1);
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+SaveRootEpsPngTxt(c1,"ResultsPlot/Chicane/Pb_v01")
+
+File with info
+Fri 22 May 2026 08:28:39 AM CEST
+
+Plot created in:
+/home/victor93/CmExperimentFolder/2026_Sm/2026_Sm/Plots01_Victor
+
+Last Root commands
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},0,0,0,1);
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+SaveRootEpsPngTxt(c1,"ResultsPlot/Chicane/Pb_v01")
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+.q
+.x Plot2DHisto.cc+
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {5000},1,0,0,1);
+plot2D({"En"},{"Pb","Pb-NoChicane"}, {0},{0.15},{9.999}, {1}, "CP", {10000},1,0,0,1);
+SaveRootEpsPngTxt(c1,"ResultsPlot/Chicane/Pb_v01")
+

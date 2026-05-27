@@ -1,0 +1,18 @@
+File with info
+Tue 26 May 2026 08:30:44 AM CEST
+
+Plot created in:
+/home/victor93/CmExperimentFolder/2026_Sm/2026_Sm/Plots01_Victor
+
+Last Root commands
+  plot2D({"En"},
+{"Apr-15","Apr-24","May-5","May-11","May-20"},
+{0}, {16e3}, {30e3}, {1}, "CP",20,0,0,0,1)
+  plot2D({"En"},
+{"Apr-24","May-5","May-11","May-20"},
+{0}, {16e3}, {30e3}, {1}, "CP",20,0,0,0,1)
+ plot2D({"En"},
+{"May-5","May-11","May-20"},
+{0}, {16e3}, {30e3}, {1}, "CP",20,0,0,0,1)
+SaveRootEpsPngTxt(c1,"ResultsPlot/Flux/Flux_SiMON_2026_May_v01")
+
