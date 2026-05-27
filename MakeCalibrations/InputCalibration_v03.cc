@@ -39,9 +39,9 @@ int main(int argc, char** argv) {
   std::vector<string> Source = {"Cs", "Bi1", "Bi2", "AmBe", "Y1",
                                 "Y2", "Co",  "Ba",  "CmC",  "Mn"};
   std::vector<string> SourceType = {
-      "27sTED_Cs_2",  "27sTED_Bi_1", "27sTED_Bi_1", "27sTED_AmBe_1",
-      "27sTED_Y_2",   "27sTED_Y_2",  "Co_2",        "27sTED_Ba_1",
-      "27sTED_CmC_1", "Mn_2"};
+      "27sTED_Cs_3",  "27sTED_Bi_3", "27sTED_Bi_3", "27sTED_AmBe_3",
+      "27sTED_Y_3",   "27sTED_Y_3",  "Co_2",        "27sTED_Ba_1",
+      "27sTED_CmC_3", "Mn_2"};
   std::vector<string> SourceTypeSimulation = {"Cs", "Bi", "Bi", "AmBe", "Y",
                                               "Y",  "Co", "Ba", "CmC",  "Mn"};
   //  std::vector<double> Percen = {30, 25, 20, 13, 20, 30, 30, 30, 20, 20};
