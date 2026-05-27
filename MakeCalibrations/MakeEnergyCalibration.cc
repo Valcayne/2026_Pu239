@@ -206,7 +206,7 @@ void CreateExpfname(string DataFolder, string RunList, string FolderRootFiles,
            << " does not exist #######" << endl;
     } else {
       TFile* f = new TFile(SRunList[i].c_str(), "READ");
-      TTree* TTreeExp = (TTree*)f->Get("C6D6");
+      TTree* TTreeExp = (TTree*)f->Get("STED");
       Float_t amp;
       Int_t detn;
 
