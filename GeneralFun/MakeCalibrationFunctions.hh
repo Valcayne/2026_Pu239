@@ -81,7 +81,7 @@ void FillTH1DFromMC(TH1D* hmc, const char* MCFile, int detn, double CalibFactor,
 
   // read all entries and fill the histograms
   Int_t nentries = TTreeMC->GetEntries();
-  cout << "Read " << nameTREE << " nentries " << nentries << endl;
+  // cout << "Read " << nameTREE << " nentries " << nentries << endl;
 
   for (Int_t i = 0; i < nentries; i++) {
     TTreeMC->GetEntry(i);
