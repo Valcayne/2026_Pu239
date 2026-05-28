@@ -91,9 +91,10 @@ void FillTH1DFromMC(TH1D* hmc, const char* MCFile, int detn, double CalibFactor,
 
     hmc->Fill(
         gRandom->Gaus(Edep / CalibFactor, a_factor * sqrt(Edep) / CalibFactor));
-    cout
-        << "Fill
-           "<<gRandom->Gaus(Edep/CalibFactor,a_factor*sqrt(Edep)/CalibFactor)<<endl;
+    cout << "Fill           "
+         << gRandom->Gaus(Edep / CalibFactor,
+                          a_factor * sqrt(Edep) / CalibFactor)
+         << endl;
   }
   TH1D* hNumberOfEvents = (TH1D*)f->Get("hNumberOfEvents");
   double NumberEvents = hNumberOfEvents->GetBinContent(1);
