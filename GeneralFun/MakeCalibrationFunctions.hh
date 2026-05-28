@@ -87,8 +87,7 @@ void FillTH1DFromMC(TH1D* hmc, const char* MCFile, int detn, double CalibFactor,
     TTreeMC->GetEntry(i);
     //    cout<<i<<" Edep-0.020 "<<Edep<<endl;
     Edep = Edep - ((double)EnergyAdjustCalibrationinKeV / 1000);
-    cout << i << " Edep-" << (double)EnergyAdjustCalibrationinKeV / 1000
-         << endl;
+    cout << i << " Edep " << Edep << endl;
 
     hmc->Fill(
         gRandom->Gaus(Edep / CalibFactor, a_factor * sqrt(Edep) / CalibFactor));
