@@ -87,14 +87,13 @@ void FillTH1DFromMC(TH1D* hmc, const char* MCFile, int detn, double CalibFactor,
     TTreeMC->GetEntry(i);
     //    cout<<i<<" Edep-0.020 "<<Edep<<endl;
     Edep = Edep - ((double)EnergyAdjustCalibrationinKeV / 1000);
-    //  cout<<i<<" Edep-"<<(double)EnergyAdjustCalibrationinKeV/1000<<endl;
+    cout << i << " Edep-" << (double)EnergyAdjustCalibrationinKeV / 1000
+         << endl;
 
     hmc->Fill(
         gRandom->Gaus(Edep / CalibFactor, a_factor * sqrt(Edep) / CalibFactor));
-    cout << "Fill           "
-         << gRandom->Gaus(Edep / CalibFactor,
-                          a_factor * sqrt(Edep) / CalibFactor)
-         << endl;
+    //   cout<<"Fill
+    //   "<<gRandom->Gaus(Edep/CalibFactor,a_factor*sqrt(Edep)/CalibFactor)<<endl;
   }
   TH1D* hNumberOfEvents = (TH1D*)f->Get("hNumberOfEvents");
   double NumberEvents = hNumberOfEvents->GetBinContent(1);
