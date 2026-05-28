@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
 
   std::vector<int> DetectorsCalibrated = {1, 27};
 
-  std::vector<string> SourcesCalibrated = {"Cs", "Y1", "Y2"};
+  std::vector<string> SourcesCalibrated = {"Cs"};
   // Sources and detectors calibrated
   // std::vector<string> SourcesCalibrated = {  "Cs",  "Y1",   "Y2"
   //                                          "Bi1", "Bi2", "AmBe", "CmC"};
