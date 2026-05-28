@@ -65,34 +65,32 @@ TH1D* FillTH1DFromMC(TH1D* h1, const char* MCFile, int detn) {
 void FillTH1DFromMC(TH1D* hmc, const char* MCFile, int detn, double CalibFactor,
                     double a_factor, int EnergyAdjustCalibrationinKeV) {
   TFile* f = new TFile(MCFile, "READ");
-  cout << "open " << MCFile << endl;
+  //  cout<<"open "<<MCFile<<endl;
   char nameTREE[100];
-  //  sprintf(nameTREE, "hEdep_C6D6_%d", detn);
-  sprintf(nameTREE, "hEdep_C6D6_%d", detn);
-
+  sprintf(nameTREE, "C6D6_All");
   TTree* TTreeMC = (TTree*)f->Get(nameTREE);
-  if (!TTreeMC) {
-    std::cerr << "ERROR: Tree " << nameTREE << " not found in file " << MCFile
-              << std::endl;
-    exit(1);
-  }
+
+  Double_t Det;
   Double_t Edep;
   TTreeMC->SetBranchAddress("Edep", &Edep);
+  TTreeMC->SetBranchAddress("Det", &Det);
 
   // read all entries and fill the histograms
   Int_t nentries = TTreeMC->GetEntries();
-  cout << "Read " << nameTREE << " nentries " << nentries << endl;
+  // cout<<"Read "<<nameTREE<<" nentries "<<nentries<<  endl;
 
   for (Int_t i = 0; i < nentries; i++) {
     TTreeMC->GetEntry(i);
     //    cout<<i<<" Edep-0.020 "<<Edep<<endl;
-    Edep = Edep - ((double)EnergyAdjustCalibrationinKeV / 1000);
-    // cout << i << " Edep " << Edep << endl;
+    if (Det == detn) {
+      Edep = Edep - ((double)EnergyAdjustCalibrationinKeV / 1000);
+      //  cout<<i<<" Edep-"<<(double)EnergyAdjustCalibrationinKeV/1000<<endl;
 
-    hmc->Fill(
-        gRandom->Gaus(Edep / CalibFactor, a_factor * sqrt(Edep) / CalibFactor));
-    //   cout<<"Fill
-    //   "<<gRandom->Gaus(Edep/CalibFactor,a_factor*sqrt(Edep)/CalibFactor)<<endl;
+      hmc->Fill(gRandom->Gaus(Edep / CalibFactor,
+                              a_factor * sqrt(Edep) / CalibFactor));
+      //   cout<<"Fill
+      //   "<<gRandom->Gaus(Edep/CalibFactor,a_factor*sqrt(Edep)/CalibFactor)<<endl;
+    }
   }
   TH1D* hNumberOfEvents = (TH1D*)f->Get("hNumberOfEvents");
   double NumberEvents = hNumberOfEvents->GetBinContent(1);
@@ -102,7 +100,6 @@ void FillTH1DFromMC(TH1D* hmc, const char* MCFile, int detn, double CalibFactor,
   f->Close();
   delete f;
 }
-
 double ResFun(double* x, double* par) {
   return 2.35 * sqrt(par[0] * x[0] + par[1] * x[0] * x[0]) / x[0];
 }
