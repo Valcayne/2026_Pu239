@@ -7,15 +7,13 @@ int main(int argc, char** argv) {
 
   cout << "starting    " << endl;
 
-  // Sources and detectors calibrated
-  // std::vector<int> DetectorsCalibrated = {1,  2,  3,  4,  5,  6,  7,  8,  9,
-  //                                         10, 11, 12, 13, 14, 15, 16, 17, 18,
-  //                                         19, 20, 21, 22, 23, 24, 25, 26,
-  //                                         27};
+  Sources and detectors calibrated std::vector<int> DetectorsCalibrated = {
+      1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14,
+      15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27};
 
-  std::vector<int> DetectorsCalibrated = {1, 27};
+  // std::vector<int> DetectorsCalibrated = {1, 27};
 
-  std::vector<string> SourcesCalibrated = {"Cs"};
+  std::vector<string> SourcesCalibrated = {"Cs", "Y1", "Y2"};
   // Sources and detectors calibrated
   // std::vector<string> SourcesCalibrated = {  "Cs",  "Y1",   "Y2"
   //                                          "Bi1", "Bi2", "AmBe", "CmC"};
