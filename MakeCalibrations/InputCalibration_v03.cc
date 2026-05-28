@@ -58,12 +58,12 @@ int main(int argc, char** argv) {
   // Parameters for fitting
   int GeneralRebin = 1;
   string NameoutputFile;
-  int npRes = 5;      // 50      // Number points resolution
+  int npRes = 20;     // 50     // Number points resolution
   double Res = 0.25;  // Resolution val ue
   double PERRes =
       10;  // 50  // Percentage variation resolution. The range tested is
            //    [Res-Res*PERRes, Res+Res*PERRes]
-  int npCalib = 5;  // 50; // Number of points calibration
+  int npCalib = 20;  // 50; // Number of points calibration
   double Calib[(int)DetectorsCalibrated.size()] = {
       0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019,
       0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019, 0.00019,
