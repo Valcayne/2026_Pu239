@@ -67,8 +67,8 @@ void FillTH1DFromMC(TH1D* hmc, const char* MCFile, int detn, double CalibFactor,
   TFile* f = new TFile(MCFile, "READ");
   cout << "open " << MCFile << endl;
   char nameTREE[100];
-
-  sprintf(nameTREE, "C6D6_%d", detn);
+  //  sprintf(nameTREE, "hEdep_C6D6_%d", detn);
+  sprintf(nameTREE, "hEdep_C6D6_%d", detn);
   cout << "nameTREE " << nameTREE << endl;
 
   TTree* TTreeMC = (TTree*)f->Get(nameTREE);
