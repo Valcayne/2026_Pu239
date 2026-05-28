@@ -356,7 +356,8 @@ void CalibrateWithChi(string MCfname, string Expfname, string outFolder,
           ComptonEdgeEnergy * (100 + Percen) / (100 * CalibFactor));
       h2->SetBinContent(i, j, Chi2);
       if (Chi2 == 0) {
-        cout << ResAtComptonEdge << " " << CalibFactor << " " << Chi2 << endl;
+        //  cout << ResAtComptonEdge << " " << CalibFactor << " " << Chi2 <<
+        //  endl;
       }
       // cout << "Chi2 " << Chi2 << endl;
       if (MinChi2 > Chi2 && Chi2 != 0) {
