@@ -20,7 +20,9 @@ MakeEnergyCalibration12VIC $number 6 40 0.25 60 40 0.0002 15 0&
 sleep 5
 done
 
+MakeEnergyCalibration Y1 1  27sTED_Y_3  /eos/home-v/valcayne/nTOFDataProcessing/2026_Pu239/Calibration/HistoAmp_v01  /eos/user/a/adrians/2026_sTEDs/RunLists/RunList_2026_v01.txt  /eos/experiment/ntof/processing/official/done/  /eos/home-v/valcayne/nTOFDataProcessing/2026_Pu239/Calibration/HistoAmp_v01/Amp_Det1_27sTED_Y_3.root  /eos/home-v/valcayne/nTOFDataProcessing/2026_Pu239/Calibration/HistoAmp_v01/Amp_Det1_27sTED_Background.root  27sTED_Background                                 20000  100000   /eos/home-v/valcayne/nTOFDataProcessing//2024_27sTED/Simulations/v03/2024_27sTED_Y_1e7.root  /eos/home-v/valcayne/nTOFDataProcessing/2026_Pu239/Calibration/OutputMakeEnergyCalibration_v01        0.89804  2  20  5  0.25  10  5  0.00019  20
 
+MakeEnergyCalibration Y1 27  27sTED_Y_2  /eos/home-v/valcayne/nTOFDataProcessing/2024_27sTED/Calibration/HistoAmp_2026_v03  /afs/cern.ch/work/v/valcayne/2024_27sTED/RunLists/RunList_2026_v01.txt  /eos/experiment/ntof/processing/official/done/  /eos/home-v/valcayne/nTOFDataProcessing/2024_27sTED/Calibration/HistoAmp_2026_v03/Amp_Det27_27sTED_Y_2.root  /eos/home-v/valcayne/nTOFDataProcessing/2024_27sTED/Calibration/HistoAmp_2026_v03/Amp_Det27_27sTED_Background.root  27sTED_Background  10000  100000  /eos/home-v/valcayne/nTOFDataProcessing//2024_27sTED/Simulations/v03/2024_27sTED_Y_1e7.root  /eos/home-v/valcayne/nTOFDataProcessing/2024_27sTED/Calibration/OutputMakeEnergyCalibration_2026_v03  0.89804  2  20  10  0.25  10  50  0.00019  20
 
 
 

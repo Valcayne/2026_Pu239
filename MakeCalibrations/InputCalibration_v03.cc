@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
   int PositionArraySourceThatMatch = -1;
   string Expfname;
   string ExpfnameBackground;
-  int NumberBinsExpfname = 2e4;
+  int NumberBinsExpfname = 1e4;
   double EMaxExpfname = 1e5;
 
   // Information outputfolder
