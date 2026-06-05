@@ -287,7 +287,7 @@ acrontab -e
 
 
 
-TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_1_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_1_224003v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_1_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_1_224003_v01.txt",1,5000,250) 
 TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_2_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_2_224003_v01.txt",1,5000,250) 
 TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_3_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_3_224003_v01.txt",1,5000,250) 
 TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_4_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_4_224003_v01.txt",1,5000,250) 

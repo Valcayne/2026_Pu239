@@ -38,54 +38,13 @@ double FactorToMultyplySiliCountsToProtons =
 double TOFD = 18.97;
 
 // For subtract backgroudnS
-vector<string> MeasPredefined = {
-    "Predefined",      "Wheel_Au_100um", "Wheel_Au_1um",   "Wheel_C",
-    "Wheel_Pb",        "Wheel_Fe",       "1sTED_Au_100um", "1sTED_Au_1um",
-    "1sTED_C",         "1sTED_Pb",       "1sTED_Fe",       "9sTED_Au_100um",
-    "9sTED_Au_1um",    "9sTED_C",        "9sTED_Pb",       "9sTED_Fe",
-    "27sTED_Au_100um", "27sTED_Au_1um",  "27sTED_C",       "27sTED_Pb",
-    "27sTED_Fe",       "Wheel_Empty",    "1sTED_Empty",    "9sTED_Empty",
-    "27sTED_Empty"};
-vector<string> BackgroundMeasPredefined = {
-    "27sTED_Background_20ms", "Wheel_Background",  "Wheel_Background",
-    "Wheel_Background",       "Wheel_Background",  "Wheel_Background",
-    "1sTED_Background",       "1sTED_Background",  "1sTED_Background",
-    "1sTED_Background",       "1sTED_Background",  "9sTED_Background",
-    "9sTED_Background",       "9sTED_Background",  "9sTED_Background",
-    "9sTED_Background",       "27sTED_Background", "27sTED_Background",
-    "27sTED_Background",      "27sTED_Background", "27sTED_Background",
-};
-vector<string> DummyPredefined = {
-    "27sTED_Empty_HalfBPEPb",
-    "Wheel_Empty",
-    "Wheel_Empty",
-    "Wheel_Empty",
-    "Wheel_Empty",
-    "Wheel_Empty",
-    "1sTED_Empty",
-    "1sTED_Empty",
-    "1sTED_Empty",
-    "1sTED_Empty",
-    "1sTED_Empty",
-    "9sTED_Empty",
-    "9sTED_Empty",
-    "9sTED_Empty",
-    "9sTED_Empty",
-    "9sTED_Empty",
-    "27sTED_Empty",
-    "27sTED_Empty",
-    "27sTED_Empty",
-    "27sTED_Empty",
-    "27sTED_Empty",
-};
+vector<string> MeasPredefined = {"Predefined", "Pu239"};
+vector<string> BackgroundMeasPredefined = {"27sTED_Background_20ms",
+                                           "Pu239_Background_20ms"};
+vector<string> DummyPredefined = {"27sTED_Empty_HalfBPEPb", "Dummy"};
 vector<string> BackgroundDummyPredefined = {
-    "27sTED_Background_20ms", "Wheel_Background",  "Wheel_Background",
-    "Wheel_Background",       "Wheel_Background",  "Wheel_Background",
-    "1sTED_Background",       "1sTED_Background",  "1sTED_Background",
-    "1sTED_Background",       "1sTED_Background",  "9sTED_Background",
-    "9sTED_Background",       "9sTED_Background",  "9sTED_Background",
-    "9sTED_Background",       "27sTED_Background", "27sTED_Background",
-    "27sTED_Background",      "27sTED_Background", "27sTED_Background",
+    "Pu239_Background_20ms",
+    "Pu239_Background_20ms",
 };
 vector<double> EfficiencyType = {4.13, 4.13,  4.13,  4.13,  4.13,  0.59,  0.59,
                                  0.59, 0.59,  0.59,  5.60,  5.60,  5.60,  5.60,
@@ -94,18 +53,16 @@ vector<double> EfficiencyType = {4.13, 4.13,  4.13,  4.13,  4.13,  0.59,  0.59,
 
 ;
 // For GetSimul
-vector<string> NameSimulArray = {"9sTED_Au_100um", "9sTED_Au_1um", "9sTED_Fe",
-                                 "Au45_Top", "218260"};
+vector<string> NameSimulArray = {"Au_1cm", "Pu239", "9sTED_Fe", "Au45_Top",
+                                 "218260"};
 vector<string> NameSimulRootfile = {
-    "DataPlot/Yield_Au_100um_EAR2_v01", "DataPlot/Yield_EAR2_Au197_6.5mg_1um",
+    "DataPlot/Yield_Au_100um_EAR2_v01", "DataPlot/Yield_Pu239_EAR2_Fis_100mg",
     "DataPlot/Yield_EAR2_Fe26_2104mg_v02", "DataPlot/Yield_Au_100um_EAR2_v01",
     "DataPlot/Yield_Au_100um_EAR2_v01"};
-vector<vector<string>> NameSimulRootfile2 = {{
-
-    // vector<string> NameSimulRootfile2 = {
-    "DataPlot/Yield_Au_100um_EAR2_v01", "DataPlot/Yield_EAR2_Au197_6.5mg_1um",
+vector<string> NameSimulRootfile2 = {
+    "DataPlot/Yield_Au_100um_EAR2_v01", "DataPlot/Yield_Pu239_EAR2_Cap_100mg",
     "DataPlot/Yield_EAR2_Fe26_2104mg_v02", "DataPlot/Yield_Au_100um_EAR2_v01",
-    "DataPlot/Yield_Au_100um_EAR2_v01"}};
+    "DataPlot/Yield_Au_100um_EAR2_v01"};
 
 vector<string> NameSimulArrayEdep = {
     "27sTED_Y_1",    "27sTED_Cs_3",  "27sTED_Bi_1", "27sTED_Ba_1",
@@ -184,8 +141,8 @@ vector<double> ResolParameter2 = {
 // double NormalizeMinEn = 100;
 // double NormalizeMaxEn = 500;
 
-double NormalizeMinEn = 0.1;
-double NormalizeMaxEn = 1;
+double NormalizeMinEn = 15;
+double NormalizeMaxEn = 15.5;
 
 // double NormalizeMinEn = 1000;
 // double NormalizeMaxEn = 1200;

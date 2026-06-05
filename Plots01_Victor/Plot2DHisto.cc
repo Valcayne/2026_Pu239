@@ -103,8 +103,7 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
   int n = 0;
   string fname;
   TH1D* hSimul;
-  TH1D* hSimul2[10];
-  int const hSimul2Size = 7;
+  TH1D* hSimul2;
 
   bool SubtractBackground = false;
   double Used_PType[NumberOfHisto];
@@ -232,9 +231,8 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
     }
   }
   hSimul = (TH1D*)h1[0]->Clone();
-  for (int i = 0; i < hSimul2Size; i++) {
-    hSimul2[i] = (TH1D*)h1[0]->Clone();
-  }
+  hSimul2 = (TH1D*)h1[0]->Clone();
+
   if (CompareWithSimul) {
     if (NameHisto[0] == "Edep") {
       cout << "Start with GetSimulMC" << endl;
@@ -253,22 +251,11 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
            << endl;
       hSimul = GetSimul(h1[0], MeasurementType[0], NameSimulArray,
                         NameSimulRootfile, TypeOfPlot);
-      for (int i = 0; i < hSimul2Size; i++) {
-        cout << "hsimul2 " << i << " "
-             << NameSimulRootfile2[i][FindPositionString(NameSimulArray,
-                                                         MeasurementType[0])]
-             << endl;
-        if (NameSimulRootfile2[i][FindPositionString(
-                NameSimulArray, MeasurementType[0])] != "-1") {
-          hSimul2[i] = GetSimul(h1[0], MeasurementType[0], NameSimulArray,
-                                NameSimulRootfile2[i], TypeOfPlot);
-          hSimul2[i]->SetLineColor(10002 + i);
-          hSimul2[i]->Rebin(rebin[0]);
-          hSimul2[i]->Scale(1.0 / (double)rebin[0]);
-        }
-      }
+      hSimul2 = GetSimul(h1[0], MeasurementType[0], NameSimulArray,
+                         NameSimulRootfile2, TypeOfPlot);
     }
     hSimul->SetLineColor(kBlack);
+    hSimul2->SetLineColor(8);
   }
   hSimul->Rebin(rebin[0]);
   hSimul->Scale(1.0 / (double)rebin[0]);
@@ -405,7 +392,7 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
         h1[i]->GetYaxis()->SetTitle(" Flux_{SILI}/Flux_{Eval}");
       } else {
         h1[i]->Scale(7.e12 / nprotons[i]);
-        DivideByNeutronFluence_iso_2023(h1[i]);
+        DivideByNeutronFluence_EAR2(h1[i]);
         // DivideByNeutronFluence_iso_2024(h1[i]);
 
         h1[i]->GetYaxis()->SetTitle("Yield* ");
@@ -660,38 +647,10 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
   if (CompareWithSimul) {
     if (IfEnOrEdep) {
       hSimul->Draw("histo E same");
-      legend->AddEntry(hSimul, "All", "l");
+      hSimul2->Draw("histo E same");
 
-      char namelegend[1000];
-      for (int i = 0; i < hSimul2Size; i++) {
-        if (NameSimulRootfile2[i][FindPositionString(
-                NameSimulArray, MeasurementType[0])] != "-1") {
-          hSimul2[i]->Draw("histo E same");
-          sprintf(namelegend, "Iso %d", i);
-          if (i == 0) {
-            sprintf(namelegend, "Sm-144");
-          }
-          if (i == 1) {
-            sprintf(namelegend, "Sm-147");
-          }
-          if (i == 2) {
-            sprintf(namelegend, "Sm-148");
-          }
-          if (i == 3) {
-            sprintf(namelegend, "Sm-149");
-          }
-          if (i == 4) {
-            sprintf(namelegend, "Sm-150");
-          }
-          if (i == 5) {
-            sprintf(namelegend, "Sm-152");
-          }
-          if (i == 6) {
-            sprintf(namelegend, "Sm-154");
-          }
-          legend->AddEntry(hSimul2[i], namelegend, "l");
-        }
-      }
+      legend->AddEntry(hSimul, "Pu239-Fis", "l");
+      legend->AddEntry(hSimul2, "Pu239-Cap", "l");
 
     } else {
       hSimul->Draw("histo E same");
