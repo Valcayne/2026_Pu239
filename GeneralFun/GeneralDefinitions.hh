@@ -65,7 +65,7 @@ no se ha tenido en cuenta.
 // Adrian Folder
 /// eos/user/a/adrians/nTOFDataProcessing/2026_sTEDs
 string Direction2DHisto =
-    "../DatosEnDiscoDuro_Adrian/2DHistos/v01GainCorrectedMerge/Histos01_";
+    "../DatosEnDiscoDuroAdrian/2DHistos/v01GainCorrectedMerge/Histos01_";
 
 // string Direction2DHisto = "../DatosEnDiscoDuro/2DHistos/v01Merge/Histos01_";
 //
@@ -164,6 +164,17 @@ TColor* color17 = new TColor(10017, 0.67, 0.56, 0.58);
 TColor* color18 = new TColor(10018, 0.46, 0.54, 0.57);
 TColor* color19 = new TColor(10019, 0.68, 0.74, 0.78);
 TColor* color20 = new TColor(10020, 0.5, 0.5, 0.61);
+
+TColor* color21 = new TColor(10021, 0.93, 0.51, 0.93);  // violet
+TColor* color22 = new TColor(10022, 0.25, 0.88, 0.82);  // turquoise
+TColor* color23 = new TColor(10023, 0.95, 0.80, 0.25);  // gold
+TColor* color24 = new TColor(10024, 0.60, 0.20, 0.80);  // purple
+TColor* color25 = new TColor(10025, 0.20, 0.70, 0.20);  // dark green
+TColor* color26 = new TColor(10026, 0.85, 0.35, 0.15);  // brick orange
+TColor* color27 = new TColor(10027, 0.15, 0.45, 0.85);  // royal blue
+TColor* color28 = new TColor(10028, 0.95, 0.55, 0.70);  // pink
+TColor* color29 = new TColor(10029, 0.40, 0.40, 0.15);  // olive
+TColor* color30 = new TColor(10030, 0.55, 0.25, 0.25);  // brown
 // =====================================================================
 
 #define NDetectorMAX 15  // this is the maximum number of detectors of one typw

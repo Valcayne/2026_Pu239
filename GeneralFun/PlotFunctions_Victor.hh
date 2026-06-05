@@ -886,6 +886,54 @@ TH1D* Project2DHisto(string fname, string NameDetector, string NameHisto,
            << " ###########" << endl;
       exit(1);
     }
+
+    // I would check that the TimeMeasurement_ns si the true time of the pulse;
+
+    bool found = false;
+    int firstBinX = -1;
+    for (int ix = 1; ix <= h2->GetNbinsX() && !found; ++ix) {
+      for (int iy = 1; iy <= h2->GetNbinsY(); ++iy) {
+        if (h2->GetBinContent(ix, iy) > 0.0) {
+          firstBinX = ix;
+          found = true;
+          break;  // rompe el bucle de Y
+        }
+      }
+    }
+    double TimeHighDefine =
+        EtoTOF(h2->GetXaxis()->GetBinLowEdge(firstBinX), TOFD);
+
+    cout << "TimeHighDefine = " << TimeHighDefine
+         << "TimeMeasurement_ns = " << TimeMeasurement_ns << endl;
+
+    vector<double> TimePossible = {0, 20e6, 70e6, 60e6, 100e6};
+
+    bool match = false;
+
+    for (double ref : TimePossible) {
+      double diff = fabs(TimeHighDefine - ref);
+      double tol = 0.02 * ref;  // tolerancia del 1%
+
+      if (diff <= tol) {
+        cout << TimeHighDefine << " inside 2% of " << ref
+             << " TimeMeasurement_ns is now define as " << ref << endl;
+        if (ref != 0) {
+          TimeMeasurement_ns = ref;
+        }
+
+        match = true;
+      }
+    }
+
+    if (!match) {
+      cout << TimeHighDefine
+           << "  the minium time it is not inside 2% of the possible ones"
+           << endl;
+      cout << " ########### Error in " << __FILE__ << ", line " << __LINE__
+           << " ###########" << endl;
+      cin.get();  // Espera a que el usuario pulse Enter
+    }
+
     cout << "Type 3 pulse lowlimit= " << TimeLowLimit
          << "  TimeHighLimit= " << TimeHighLimit << endl;
     if (IfEnOrEdep) {
@@ -933,9 +981,9 @@ TH1D* Project2DHisto(string fname, string NameDetector, string NameHisto,
       cout << "scalefactor  " << scalefactor << endl;
       h3->Scale(1.0 * scalefactor);
     };
-
   }
   ////No pulse 3
+
   else {
     if (IfEnOrEdep) {
       int minbin = h2->GetYaxis()->FindBin(EnOrEdepMin);

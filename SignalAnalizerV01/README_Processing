@@ -284,3 +284,45 @@ acrontab -e
 
 
 
+
+
+
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_1_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_1_224003v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_2_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_2_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_3_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_3_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_4_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_4_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_5_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_5_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_6_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_6_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_7_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_7_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_8_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_8_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_9_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_9_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_10_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_10_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_11_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_11_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_12_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_12_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_13_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_13_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_14_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_14_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_15_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_15_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_16_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_16_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_17_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_17_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_18_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_18_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_19_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_19_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_20_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_20_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_21_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_21_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_22_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_22_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_23_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_23_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_24_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_24_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_25_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_25_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_26_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_26_224003_v01.txt",1,5000,250) 
+TakeAveragedSignal("Avg_2026_Pu239/v01/Sig_sTED_27_224003_v01.sig","Avg_2026_Pu239/v01/Sig_sTED_27_224003_v01.txt",1,5000,250) 
+
+
+plot02("Avg_2026_Pu239/v01/Sig_sTED_1_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_2_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_3_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_4_224003_v01.txt")
+plot02("Avg_2026_Pu239/v01/Sig_sTED_5_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_6_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_7_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_8_224003_v01.txt")
+plot02("Avg_2026_Pu239/v01/Sig_sTED_9_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_10_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_11_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_12_224003_v01.txt")
+plot02("Avg_2026_Pu239/v01/Sig_sTED_13_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_14_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_15_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_16_224003_v01.txt")
+plot02("Avg_2026_Pu239/v01/Sig_sTED_17_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_18_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_19_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_20_224003_v01.txt")
+plot02("Avg_2026_Pu239/v01/Sig_sTED_21_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_22_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_23_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_24_224003_v01.txt")
+plot02("Avg_2026_Pu239/v01/Sig_sTED_25_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_26_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_27_224003_v01.txt","Avg_2026_Pu239/v01/Sig_sTED_27_224003_v01.txt")
+
+
+Para cada uno ha

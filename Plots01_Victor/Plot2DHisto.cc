@@ -1,6 +1,6 @@
 // #include "DefPlot2DHisto_LABR_2026_Sm_v01.hh"
 // include "DefPlot2DHisto_SILI_2026_Sm_v01.hh"
-#include "DefPlot2DHisto_2026_Sm_v01.hh"
+#include "DefPlot2DHisto_2026_Pu239_v01.hh"
 
 ///
 ///
@@ -797,7 +797,8 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
     }
 
     // h1Ratio[0]->GetYaxis()->SetRangeUser(-2.01, 2.01);
-    h1Ratio[0]->GetYaxis()->SetRangeUser(0.97, 1.03);
+    h1Ratio[0]->GetYaxis()->SetRangeUser(0.6, 1.4);
+    //        h1Ratio[0]->GetYaxis()->SetRangeUser(0.97, 1.03);
   }
   if (IfSaveName == "-1") {
     SaveRootEpsPngTxtFunction(c1, SaveName.c_str());
