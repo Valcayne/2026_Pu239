@@ -141,8 +141,8 @@ vector<double> ResolParameter2 = {
 // double NormalizeMinEn = 100;
 // double NormalizeMaxEn = 500;
 
-double NormalizeMinEn = 15;
-double NormalizeMaxEn = 15.5;
+double NormalizeMinEn = 0.1;
+double NormalizeMaxEn = 10.0;
 
 // double NormalizeMinEn = 1000;
 // double NormalizeMaxEn = 1200;

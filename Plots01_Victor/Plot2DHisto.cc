@@ -104,6 +104,7 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
   string fname;
   TH1D* hSimul;
   TH1D* hSimul2;
+  TH1D* hSimul3;
 
   bool SubtractBackground = false;
   double Used_PType[NumberOfHisto];
@@ -209,7 +210,7 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
                       Returnprotons, TOFD, EnOrEdepMin[k], EnOrEdepMax[l],
                       TimeMeasurement_ns, CorrectDeadTime);
                 }
-                /// int NotUSed = ChangeTOFD(h1[n], TOFD, 183.96);
+                // int NotUSed = ChangeTOFD(h1[n], TOFD, 18.92);
                 // Change TOF     in case of needed
                 npulses[n] = Returnpulses;
                 nprotons[n] = Returnprotons;
@@ -232,6 +233,7 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
   }
   hSimul = (TH1D*)h1[0]->Clone();
   hSimul2 = (TH1D*)h1[0]->Clone();
+  hSimul3 = (TH1D*)h1[0]->Clone();
 
   if (CompareWithSimul) {
     if (NameHisto[0] == "Edep") {
@@ -253,12 +255,20 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
                         NameSimulRootfile, TypeOfPlot);
       hSimul2 = GetSimul(h1[0], MeasurementType[0], NameSimulArray,
                          NameSimulRootfile2, TypeOfPlot);
+      hSimul3 = GetSimul(h1[0], MeasurementType[0], NameSimulArray,
+                         NameSimulRootfile, TypeOfPlot);
     }
-    hSimul->SetLineColor(kBlack);
+    hSimul->SetLineColor(kBlue);
     hSimul2->SetLineColor(8);
+    hSimul3->SetLineColor(kBlack);
   }
   hSimul->Rebin(rebin[0]);
   hSimul->Scale(1.0 / (double)rebin[0]);
+  hSimul2->Rebin(rebin[0]);
+  hSimul2->Scale(1.0 / (double)rebin[0]);
+
+  hSimul3->Rebin(rebin[0]);
+  hSimul3->Scale(1.0 / (double)rebin[0]);
 
   // hSimul2->Rebin(rebin[0]);
   //  hSimul2->Scale(1.0 / (double)rebin[0]);
@@ -471,7 +481,58 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
   /// We Normalize
 
   if (IfNormalize && IfEnOrEdep) {
-    Normalize(h1, NumberOfHisto, hSimul, NormalizeMinEn, NormalizeMaxEn);
+    if (MeasurementType[0] == "Pu239") {
+      double NormalizeMinEnFis = 15;
+      double NormalizeMaxEnFis = 15.5;
+
+      double NormalizeMinEnCap = 42.5;
+      double NormalizeMaxEnCap = 45;
+
+      Normalize(h1, NumberOfHisto, hSimul, NormalizeMinEnFis,
+                NormalizeMaxEnFis);
+
+      // For Pu239
+      TH1D* h1NoFis = (TH1D*)h1[0]->Clone();
+      h1NoFis->Add(hSimul, -1);
+      cout << "##################" << endl;
+
+      cout << "Doing integrals for Pu239" << endl;
+      cout << "Range used for Fission " << NormalizeMinEnFis << " "
+           << NormalizeMaxEnFis << endl;
+      cout << "Range used for Capture " << NormalizeMinEnCap << " "
+           << NormalizeMaxEnCap << endl;
+
+      double IntegralsCap;
+      double ErrorsCap;
+      double IntegralsToNormalize;
+      double ErrorsToNormalize;
+
+      IntegralsToNormalize =
+          h1NoFis->IntegralAndError(h1NoFis->FindBin(NormalizeMinEnCap),
+                                    h1NoFis->FindBin(NormalizeMaxEnCap),
+                                    ErrorsToNormalize) /
+          (1 + h1NoFis->FindBin(NormalizeMaxEnCap) -
+           h1NoFis->FindBin(NormalizeMinEnCap));
+      IntegralsCap = hSimul2->IntegralAndError(
+                         hSimul2->FindBin(NormalizeMinEnCap),
+                         hSimul2->FindBin(NormalizeMaxEnCap), ErrorsCap) /
+                     (1 + hSimul2->FindBin(NormalizeMaxEnCap) -
+                      hSimul2->FindBin(NormalizeMinEnCap));
+
+      // cout << "IntegralsCap " << IntegralsCap << " IntegralsToNormalize "
+      //      << IntegralsToNormalize << endl;
+      cout << "Scaling capture yield by" << IntegralsToNormalize / IntegralsCap
+           << endl;
+
+      cout << "Ration Eff Fis/Eff Cap= " << IntegralsCap / IntegralsToNormalize
+           << endl;
+      cout << "##################" << endl;
+
+      hSimul2->Scale(IntegralsToNormalize / IntegralsCap);
+      hSimul3->Add(hSimul2, 1);
+    } else {
+      Normalize(h1, NumberOfHisto, hSimul, NormalizeMinEn, NormalizeMaxEn);
+    }
     if ((NameDetector == "SILI") && (TypeOfPlot == "Yield")) {
       double binValue;
       double LowLimit = 10.001;
@@ -648,10 +709,15 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
     if (IfEnOrEdep) {
       hSimul->Draw("histo E same");
       hSimul2->Draw("histo E same");
+      hSimul3->Draw("histo E same");
 
-      legend->AddEntry(hSimul, "Pu239-Fis", "l");
-      legend->AddEntry(hSimul2, "Pu239-Cap", "l");
-
+      if (MeasurementType[0] == "Pu239") {
+        legend->AddEntry(hSimul, "Eval Fis", "l");
+        legend->AddEntry(hSimul2, "Eval Cap", "l");
+        legend->AddEntry(hSimul3, "Eval Cap+Fis", "l");
+      } else {
+        legend->AddEntry(hSimul3, "Eval", "l");
+      }
     } else {
       hSimul->Draw("histo E same");
 
@@ -701,7 +767,7 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
       // legend->AddEntry((TObject*)0, AddToLegend.c_str(), "");
     }
   }
-  legend->SetTextSize(0.06);
+  legend->SetTextSize(0.04);
   legend->SetBorderSize(0);
   legend->SetFillColor(0);
   legend->SetFillStyle(0);
