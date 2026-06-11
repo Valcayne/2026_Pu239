@@ -1,0 +1,18 @@
+File with info
+mié 10 jun 2026 11:36:43 CEST
+
+Plot created in:
+/home/victor93/CmExperimentFolder/2026_Pu239/2026_Pu239/Plots01_Victor
+
+Last Root commands
+plot2D({"En"}, {"Pu239"}, {0}, {0.5}, {9.999}, {1}, "Yield",50,1,1,1)
+plot2D({"En"}, {"Pu239"}, {0}, {0.5}, {9.999}, {1}, "Yield",50,1,1,1)
+plot2D({"En"}, {"Pu239"}, {0}, {0.5}, {9.999}, {1}, "Yield",50,1,1,1)
+.x Plot2DHisto.cc+
+plot2D({"Edep"}, {"27sTED_Y_5"}, {1}, {0.5}, {9.999}, {1}, "CR",1,1,1,1)
+plot2D({"Edep"}, {"Pu239"}, {1}, {15,42}, {15.5,45}, {1}, "CR",1,1,1,1)
+plot2D({"Edep"}, {"Pu239"}, {1}, {15,42}, {15.5,45}, {1}, "CR",1,1,1)
+plot2D({"Edep"}, {"Pu239"}, {1}, {15,42}, {15.5,45}, {1}, "CR",1,1,1)
+plot2D({"Edep"}, {"Pu239"}, {1}, {15,42}, {15.5,45}, {1}, "CR",4,1,1)
+SaveRootEpsPngTxt(c1,"ResultsPlot/Edep_Pu239")
+

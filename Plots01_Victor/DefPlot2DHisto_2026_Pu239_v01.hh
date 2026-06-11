@@ -43,8 +43,8 @@ vector<string> BackgroundMeasPredefined = {"27sTED_Background_20ms",
                                            "Pu239_Background_20ms"};
 vector<string> DummyPredefined = {"27sTED_Empty_HalfBPEPb", "Dummy"};
 vector<string> BackgroundDummyPredefined = {
-    "Pu239_Background_20ms",
-    "Pu239_Background_20ms",
+    "27sTED_Background_20ms",
+    "27sTED_Background_20ms",
 };
 vector<double> EfficiencyType = {4.13, 4.13,  4.13,  4.13,  4.13,  0.59,  0.59,
                                  0.59, 0.59,  0.59,  5.60,  5.60,  5.60,  5.60,
@@ -65,8 +65,8 @@ vector<string> NameSimulRootfile2 = {
     "DataPlot/Yield_Au_100um_EAR2_v01"};
 
 vector<string> NameSimulArrayEdep = {
-    "27sTED_Y_1",    "27sTED_Cs_3",  "27sTED_Bi_1", "27sTED_Ba_1",
-    "27sTED_AmBe_1", "27sTED_CmC_1", "Wheel_Y"};
+    "27sTED_Y_5",    "27sTED_Cs_5",  "27sTED_Bi_5", "27sTED_Ba_5",
+    "27sTED_AmBe_5", "27sTED_CmC_5", "Wheel_Y"};
 
 vector<string> NameSimulRootfileEdep = {
     //"/media/victor93/Elements/Valcayne/ExperimentData_Outputs/2025_TestFis/"
