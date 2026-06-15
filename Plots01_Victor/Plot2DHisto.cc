@@ -998,7 +998,7 @@ void plot2DChangeGainWithSources(int detN) {
   NormalizeMinEdep = 0.5;
   NormalizeMaxEdep = 2.5;
   plot2D({"Edep"}, {"27sTED_Y_3", "27sTED_Y_4", "27sTED_Y_5", "27sTED_Y_6"},
-         Detector, {0.01}, {1e6}, {3}, "CR", rebin, false, true, false, false,
+         Detector, {0.01}, {1e6}, {3}, "CR", rebin, false, true, true, false,
          (outputFolder + to_string(detN) + "_Y"));
 
   ForPlotEminEdep = 0.1;

@@ -1,0 +1,18 @@
+File with info
+lun 15 jun 2026 16:18:53 CEST
+
+Plot created in:
+/home/victor93/CmExperimentFolder/2026_Pu239/2026_Pu239/Plots01_Victor
+
+Last Root commands
+.x Plot2DHisto.cc+
+.x Plot2DHisto.cc+
+plot2DChangeGainWithSources(1)
+.x Plot2DHisto.cc+
+plot2DChangeGainWithSources(1)
+.q
+.x Plot2DHisto.cc+
+.x Plot2DHisto.cc+
+plot2DChangeGainWithSourceAllDets()
+.q
+
