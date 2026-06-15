@@ -598,21 +598,21 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
     cout << "Beforenoramlize" << endl;
 
     Normalize(h1, n, hSimul, NormalizeMinEdep, NormalizeMaxEdep);
-    // if (!CompareWithSimul) {
-    //   cout << "StartGAinsShift" << endl;
+    if (!CompareWithSimul) {
+      cout << "StartGAinsShift" << endl;
 
-    //   double shiftArray[NumberOfHisto];
-    //   double shift;
-    //   for (auto i = 1; i < NumberOfHisto; i++) {
-    //     h1GainShift[i] = CalculateBestShift(
-    //         shift, h1[0], h1[i], NormalizeMinEdep, NormalizeMaxEdep,
-    //         NumberIterations, MinShift, MaxShift);
-    //     shiftArray[i] = shift;
-    //     TitleLegend[i] =
-    //         TitleLegend[i] + " G=" + doubleToDecimalString(shiftArray[i], 3);
-    //     cout << TitleLegend[i] << " Shift= " << shiftArray[i] << endl;
-    //   }
-    // }
+      double shiftArray[NumberOfHisto];
+      double shift;
+      for (auto i = 1; i < NumberOfHisto; i++) {
+        h1GainShift[i] = CalculateBestShift(
+            shift, h1[0], h1[i], NormalizeMinEdep, NormalizeMaxEdep,
+            NumberIterations, MinShift, MaxShift);
+        shiftArray[i] = shift;
+        TitleLegend[i] =
+            TitleLegend[i] + " G=" + doubleToDecimalString(shiftArray[i], 3);
+        cout << TitleLegend[i] << " Shift= " << shiftArray[i] << endl;
+      }
+    }
   }
 
   TCanvas* c1 = new TCanvas("c1", "c1", 800, 600);
@@ -998,7 +998,7 @@ void plot2DChangeGainWithSources(int detN) {
   NormalizeMinEdep = 0.5;
   NormalizeMaxEdep = 2.5;
   plot2D({"Edep"}, {"27sTED_Y_3", "27sTED_Y_4", "27sTED_Y_5", "27sTED_Y_6"},
-         Detector, {0.01}, {1e6}, {3}, "CR", rebin, false, true, true, false,
+         Detector, {0.01}, {1e6}, {3}, "CR", rebin, false, true, false, false,
          (outputFolder + to_string(detN) + "_Y"));
 
   ForPlotEminEdep = 0.1;
