@@ -38,12 +38,20 @@ double FactorToMultyplySiliCountsToProtons =
 double TOFD = 18.97;
 
 // For subtract backgroudnS
-vector<string> MeasPredefined = {"Predefined", "Pu239"};
-vector<string> BackgroundMeasPredefined = {"27sTED_Background_20ms",
-                                           "Pu239_Background_20ms"};
-vector<string> DummyPredefined = {"27sTED_Empty_HalfBPEPb", "Dummy"};
+vector<string> MeasPredefined = {"Predefined",    "Pu239",          "Pu239_Ag",
+                                 "Pu239_Al_thin", "Pu239_Al_thick", "Pu239_Cd",
+                                 "Pu239_Bi"};
+vector<string> BackgroundMeasPredefined = {
+    "27sTED_Background_20ms", "Pu239_Background_20ms", "Pu239_Background_20ms",
+    "Pu239_Background_20ms",  "Pu239_Background_20ms", "Pu239_Background_20ms",
+    "Pu239_Background_20ms"};
+vector<string> DummyPredefined = {
+    "27sTED_Empty_HalfBPEPb", "Dummy",    "Dummy_Ag", "Dummy_Al_thin",
+    "Dummy_Al_thick",         "Dummy_Cd", "Dummy_Bi"};
 vector<string> BackgroundDummyPredefined = {
-    "27sTED_Background_20ms",
+    "27sTED_Background_20ms", "27sTED_Background_20ms",
+    "27sTED_Background_20ms", "27sTED_Background_20ms",
+    "27sTED_Background_20ms", "27sTED_Background_20ms",
     "27sTED_Background_20ms",
 };
 vector<double> EfficiencyType = {4.13, 4.13,  4.13,  4.13,  4.13,  0.59,  0.59,
