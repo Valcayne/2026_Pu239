@@ -21,7 +21,8 @@ void plot2D(std::vector<string> NameHisto, std::vector<string> MeasurementType,
             string TypeOfPlot, int rebin, bool UseBackgroundSubtracted = false,
             bool IfNormalize = false, bool CompareWithSimul = false,
             bool CalculateRatio = false, string IfSaveName = "-1");
-
+void plot2DCheckCalibrations(int detN);
+void plot2DChangeGainWithSources(int detN);
 void Plot2DHisto() {
   /*
 
@@ -929,153 +930,82 @@ void plot2DVariousCompareWithRunType(int detN) {
     }
   }
 }
+
+void plot2DCheckCalibrationsAllDets() {
+  for (int i = 1; i < 28; i++) {
+    plot2DCheckCalibrations(i);
+  }
+}
 void plot2DCheckCalibrations(int detN) {
   vector<int> Detector;
   Detector.push_back(detN);
   int rebin = 1;
   string outputFolder = "ResultsPlot/CheckCalibrations/CheckCalibrations_";
-  BackgroundMeasPredefined[0] = "Background_1";
+  BackgroundMeasPredefined[0] = "27sTED_Background_100ms";
   ForPlotEminEdep = 0.1;
   ForPlotEmaxEdep = 2.5;
   NormalizeMinEdep = 0.5;
   NormalizeMaxEdep = 2.5;
-  plot2D({"Edep"}, {"Y"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin, true, true,
-         true, false, (outputFolder + to_string(detN) + "_Y"));
+  plot2D({"Edep"}, {"27sTED_Y_5"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin,
+         true, true, true, false, (outputFolder + to_string(detN) + "_Y"));
+
+  plot2D({"Edep"}, {"27sTED_Bi_5"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin,
+         true, true, true, false, (outputFolder + to_string(detN) + "_Bi"));
 
   ForPlotEminEdep = 0.1;
   ForPlotEmaxEdep = 1;
   NormalizeMinEdep = 0.3;
   NormalizeMaxEdep = 0.7;
-  plot2D({"Edep"}, {"Cs"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin, true,
-         true, true, false, (outputFolder + to_string(detN) + "_Cs"));
+  plot2D({"Edep"}, {"27sTED_Cs_5"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin,
+         true, true, true, false, (outputFolder + to_string(detN) + "_Cs"));
 
   ForPlotEminEdep = 0;
   ForPlotEmaxEdep = 0.5;
   NormalizeMinEdep = 0.1;
   NormalizeMaxEdep = 0.3;
-  plot2D({"Edep"}, {"Ba"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin, true,
-         true, true, false, (outputFolder + to_string(detN) + "_Ba"));
+  plot2D({"Edep"}, {"27sTED_Ba_5"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin,
+         true, true, true, false, (outputFolder + to_string(detN) + "_Ba"));
 
   ForPlotEminEdep = 3;
   ForPlotEmaxEdep = 8;
   NormalizeMinEdep = 5;
   NormalizeMaxEdep = 7;
-  plot2D({"Edep"}, {"CmC"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin * 4, true,
-         true, true, false, (outputFolder + to_string(detN) + "_CmC"));
+  plot2D({"Edep"}, {"27sTED_CmC_5"}, Detector, {0.01}, {1e6}, {3}, "CR",
+         rebin * 4, true, true, true, false,
+         (outputFolder + to_string(detN) + "_CmC"));
 
   ForPlotEminEdep = 2;
   ForPlotEmaxEdep = 6;
   NormalizeMinEdep = 3;
   NormalizeMaxEdep = 5;
-  plot2D({"Edep"}, {"AmBe"}, Detector, {0.01}, {1e6}, {3}, "CR", rebin * 4,
-         true, true, true, false, (outputFolder + to_string(detN) + "_AmBe"));
+  plot2D({"Edep"}, {"27sTED_AmBe_5"}, Detector, {0.01}, {1e6}, {3}, "CR",
+         rebin * 4, true, true, true, false,
+         (outputFolder + to_string(detN) + "_AmBe"));
 }
-
-void plot2DChangeGainWithSources() {
+void plot2DChangeGainWithSourceAllDets() {
+  for (int i = 1; i < 28; i++) {
+    plot2DChangeGainWithSources(i);
+  }
+}
+void plot2DChangeGainWithSources(int detN) {
+  vector<int> Detector;
+  Detector.push_back(detN);
+  int rebin = 1;
+  string outputFolder = "ResultsPlot/CheckGainShift/CheckGainShift_";
+  BackgroundMeasPredefined[0] = "27sTED_Background_100ms";
   ForPlotEminEdep = 0.1;
   ForPlotEmaxEdep = 2.5;
   NormalizeMinEdep = 0.5;
   NormalizeMaxEdep = 2.5;
-  plot2D({"Edep"}, {"Y", "Y_1", "Y_2", "Y_3", "Y_Cu", "Y_Cu_1"}, {1}, {0.01},
-         {1e6}, {3}, "CR", 10, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det1_Y");
-
-  plot2D(
-      {"Edep"},
-      {"Y", "Y_1", "Y_2", "119165", "119247", "119293", "119327", "119390"},
-      {1}, {0.01}, {1e6}, {3}, "CR", 10, false, true, false, false,
-      "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det1_Y_EXTRA");
+  plot2D({"Edep"}, {"27sTED_Y_3", "27sTED_Y_4", "27sTED_Y_5", "27sTED_Y_6"},
+         Detector, {0.01}, {1e6}, {3}, "CR", rebin, false, true, false, false,
+         (outputFolder + to_string(detN) + "_Y"));
 
   ForPlotEminEdep = 0.1;
   ForPlotEmaxEdep = 1;
   NormalizeMinEdep = 0.3;
   NormalizeMaxEdep = 0.7;
-  plot2D({"Edep"}, {"Cs", "Cs_1", "Cs_2", "Cs_3", "Cs_Cu", "Cs_Cu_1"}, {1},
-         {0.01}, {1e6}, {3}, "CR", 4, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det1_Cs");
-  plot2D({"Edep"}, {"Cs", "Cs_1", "Cs_2", "Cs_3", "Cs_Cu", "Cs_Cu_1"}, {1},
-         {0.01}, {1e6}, {3}, "CR", 4, false, false, false, false,
-         "ResultsPlot/ChangeGainWithSources/CR_Det1_Cs");
-  ForPlotEminEdep = 2;
-  ForPlotEmaxEdep = 6;
-  NormalizeMinEdep = 3;
-  NormalizeMaxEdep = 5;
-  plot2D({"Edep"}, {"AmBe_1", "AmBe_2", "AmBe_3", "AmBe_Cu_1"}, {1}, {0.01},
-         {1e6}, {3}, "CR", 50, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det1_AmBe");
-
-  ForPlotEminEdep = 0.1;
-  ForPlotEmaxEdep = 2.5;
-  NormalizeMinEdep = 0.5;
-  NormalizeMaxEdep = 2.5;
-  plot2D({"Edep"}, {"Y", "Y_1", "Y_2", "Y_3", "Y_Cu", "Y_Cu_1"}, {2}, {0.01},
-         {1e6}, {3}, "CR", 10, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det2_Y");
-  ForPlotEminEdep = 0.1;
-  ForPlotEmaxEdep = 1;
-  NormalizeMinEdep = 0.3;
-  NormalizeMaxEdep = 0.7;
-  plot2D({"Edep"}, {"Cs", "Cs_1", "Cs_2", "Cs_3", "Cs_Cu", "Cs_Cu_1"}, {2},
-         {0.01}, {1e6}, {3}, "CR", 4, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det2_Cs");
-  plot2D({"Edep"}, {"Cs", "Cs_1", "Cs_2", "Cs_3", "Cs_Cu", "Cs_Cu_1"}, {2},
-         {0.01}, {1e6}, {3}, "CR", 4, false, false, false, false,
-         "ResultsPlot/ChangeGainWithSources/CR_Det2_Cs");
-  ForPlotEminEdep = 2;
-  ForPlotEmaxEdep = 6;
-  NormalizeMinEdep = 3;
-  NormalizeMaxEdep = 5;
-  plot2D({"Edep"}, {"AmBe_1", "AmBe_2", "AmBe_3", "AmBe_Cu_1"}, {2}, {0.01},
-         {1e6}, {3}, "CR", 50, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det2_AmBe");
-
-  ForPlotEminEdep = 0.1;
-  ForPlotEmaxEdep = 2.5;
-  NormalizeMinEdep = 0.5;
-  NormalizeMaxEdep = 2.5;
-  plot2D({"Edep"}, {"Y", "Y_1", "Y_2", "Y_3", "Y_Cu", "Y_Cu_1"}, {3}, {0.01},
-         {1e6}, {3}, "CR", 10, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det3_Y");
-  ForPlotEminEdep = 0.1;
-  ForPlotEmaxEdep = 1;
-  NormalizeMinEdep = 0.3;
-  NormalizeMaxEdep = 0.7;
-  plot2D({"Edep"}, {"Cs", "Cs_1", "Cs_2", "Cs_3", "Cs_Cu", "Cs_Cu_1"}, {3},
-         {0.01}, {1e6}, {3}, "CR", 4, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det3_Cs");
-  plot2D({"Edep"}, {"Cs", "Cs_1", "Cs_2", "Cs_3", "Cs_Cu", "Cs_Cu_1"}, {3},
-         {0.01}, {1e6}, {3}, "CR", 4, false, false, false, false,
-         "ResultsPlot/ChangeGainWithSources/CR_Det3_Cs");
-  ForPlotEminEdep = 2;
-  ForPlotEmaxEdep = 6;
-  NormalizeMinEdep = 3;
-  NormalizeMaxEdep = 5;
-  plot2D({"Edep"}, {"AmBe_1", "AmBe_2", "AmBe_3", "AmBe_Cu_1"}, {3}, {0.01},
-         {1e6}, {3}, "CR", 50, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det3_AmBe");
-
-  ForPlotEminEdep = 0.1;
-  ForPlotEmaxEdep = 2.5;
-  NormalizeMinEdep = 0.5;
-  NormalizeMaxEdep = 2.5;
-  plot2D({"Edep"}, {"Y", "Y_1", "Y_2", "Y_3", "Y_Cu", "Y_Cu_1"}, {4}, {0.01},
-         {1e6}, {3}, "CR", 10, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det4_Y");
-  ForPlotEminEdep = 0.1;
-  ForPlotEmaxEdep = 1;
-  NormalizeMinEdep = 0.3;
-  NormalizeMaxEdep = 0.7;
-  plot2D({"Edep"}, {"Cs", "Cs_1", "Cs_2", "Cs_3", "Cs_Cu", "Cs_Cu_1"}, {4},
-         {0.01}, {1e6}, {3}, "CR", 4, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det4_Cs");
-  plot2D({"Edep"}, {"Cs", "Cs_1", "Cs_2", "Cs_3", "Cs_Cu", "Cs_Cu_1"}, {4},
-         {0.01}, {1e6}, {3}, "CR", 4, false, false, false, false,
-         "ResultsPlot/ChangeGainWithSources/CR_Det4_Cs");
-  ForPlotEminEdep = 2;
-  ForPlotEmaxEdep = 6;
-  NormalizeMinEdep = 3;
-  NormalizeMaxEdep = 5;
-  plot2D({"Edep"}, {"AmBe_1", "AmBe_2", "AmBe_3", "AmBe_Cu_1"}, {4}, {0.01},
-         {1e6}, {3}, "CR", 50, false, true, false, false,
-         "ResultsPlot/ChangeGainWithSources/ChangeGainWithSources_Det4_AmBe");
+  plot2D({"Edep"}, {"27sTED_Cs_3", "27sTED_Cs_4", "27sTED_Cs_5", "27sTED_Cs_6"},
+         Detector, {0.01}, {1e6}, {3}, "CR", rebin, false, true, false, false,
+         (outputFolder + to_string(detN) + "_Cs"));
 }

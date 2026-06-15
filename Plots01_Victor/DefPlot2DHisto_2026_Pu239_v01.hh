@@ -106,23 +106,35 @@ vector<int> ResolNumberDetector = {1, 2, 3, 4};
 //                                   0.00371062};
 // vector<double> ResolParameter2 = {0.00233583, 0.00225643, 0.00221157,
 // 0.008693};
-double ResA = 0.0054;
-double ResB = 0.0041;
+// double ResA = 0.0054;
+// double ResB = 0.0041;
+// vector<double> ResolParameter1 = {
+//     ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA,
+//     ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA,
+//     ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA,
+//     ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA,
+//     ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA
+
+// };
+// vector<double> ResolParameter2 = {
+//     ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB,
+//     ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB,
+//     ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB,
+//     ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB,
+//     ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB};
 vector<double> ResolParameter1 = {
-    ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA,
-    ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA,
-    ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA,
-    ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA,
-    ResA, ResA, ResA, ResA, ResA, ResA, ResA, ResA
+    0.00352506,  0.00269632, 0.00303228, 0.00106258, 0.000886643, 0.00207352,
+    0.000832754, 0.00236421, 0.00294374, 0.00292346, 0.00497422,  0.00333488,
+    0.00394091,  0.00384749, 0.00465411, 0.00427204, 0.00338704,  0.004274,
+    0.00416226,  0.00399877, 0.00400881, 0.00401037, 0.00398678,  0.00351609,
+    0.00234951,  0.00360203, 0.00392238};
 
-};
 vector<double> ResolParameter2 = {
-    ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB,
-    ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB,
-    ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB,
-    ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB,
-    ResB, ResB, ResB, ResB, ResB, ResB, ResB, ResB};
-
+    0.00601896, 0.0085396,  0.00887931, 0.0114848,  0.0152919,  0.0107713,
+    0.0154078,  0.00955963, 0.00818291, 0.00614639, 0.00205977, 0.00561125,
+    0.00348621, 0.00409457, 0.00535779, 0.00223125, 0.00390291, 0.00198118,
+    0.00229781, 0.00243312, 0.00390982, 0.00440044, 0.00381249, 0.0052163,
+    0.00752604, 0.00306687, 0.00506031};
 // vector<double> ResolParameter1 = {
 //     0.00394258, 0.00277881, 0.00342603, 0.00275745, 0.000982735, 0.00337319,
 //     0.00308663, 0.00367323, 0.00216081, 0.00376572, 0.00417465,  0.00353875,

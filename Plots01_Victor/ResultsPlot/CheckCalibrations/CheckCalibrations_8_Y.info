@@ -1,0 +1,18 @@
+File with info
+lun 15 jun 2026 16:06:06 CEST
+
+Plot created in:
+/home/victor93/CmExperimentFolder/2026_Pu239/2026_Pu239/Plots01_Victor
+
+Last Root commands
+plot2DCheckCalibrationsAllDets()
+plot2D({"En_WF"}, {"Sm152_Thick"}, {0}, {0.15}, {9.999}, {1}, "CP",1.q00,1,0,0,1)
+.q
+.x Plot2DHisto.cc+
+plot2DCheckCalibrationsAllDets()
+.x Plot2DHisto.cc+
+plot2DCheckCalibrationsAllDets()
+.x Plot2DHisto.cc+
+plot2DCheckCalibrationsAllDets()
+.x Plot2DHisto.cc+
+
